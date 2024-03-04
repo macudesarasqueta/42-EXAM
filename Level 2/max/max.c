@@ -15,11 +15,11 @@ int		max(int* tab, unsigned int len)
 	return (highest_num);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
 	int num[] = {-42, 0, -5, -64, -2, -68, -1};
 	printf("%d\n", max(num, 7));
 	return (0);
-}
+}*/
