@@ -1,9 +1,9 @@
 unsigned int    lcm(unsigned int a, unsigned int b)
 {
-	unsigned int	n;
+	unsigned int n;
 
 	if (a == 0 || b == 0)
-		write(1, "0", 1);
+		return (0);
 	if (a > b)
 		n = a;
 	else
@@ -15,3 +15,13 @@ unsigned int    lcm(unsigned int a, unsigned int b)
 		n++;
 	}
 }
+
+/*#include <stdio.h>
+
+int main()
+{
+	unsigned int a = 88;
+	unsigned int b = 8;
+	printf("%d\n", lcm(a, b));
+	return (0);
+}*/
