@@ -4,7 +4,7 @@ void write_n(int num)
 {
 	char str[10] = "0123456789";
 
-	if (num > 9)
+	if (num >= 10)
 		write_n(num / 10);
 	write (1, &str[num % 10], 1);
 }
@@ -26,9 +26,4 @@ int	main(void)
 		write(1, "\n", 1);
 	}
 	return (0);
-}
-
-int	main(void)
-{
-	ft_fizzbuzz
 }
