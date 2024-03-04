@@ -1,25 +1,25 @@
 int		max(int* tab, unsigned int len)
 {
-	unsigned int res;
-	unsigned i = 0;
+	int highest_num;
+	int i = 0;
 
 	if (len == 0)
 		return (0);
-	res = tab[i];
+	highest_num = tab[i];
 	while (len > i)
 	{
-		if (tab[i] > res)
-			res = tab[i];
+		if (tab[i] > highest_num)
+			highest_num = tab[i];
 		i++;
 	}
-	return (res);
+	return (highest_num);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int main()
 {
-	int num[] = {1, 3, 8, 0};
-	printf("%d\n", max(num, 4));
+	int num[] = {-42, 0, -5, -64, -2, -68, -1};
+	printf("%d\n", max(num, 7));
 	return (0);
-}*/
+}
