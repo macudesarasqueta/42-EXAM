@@ -18,7 +18,7 @@ char	*ft_strpbrk(const char *s1, const char *s2)
 	return (0);
 }
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	main()
@@ -28,4 +28,4 @@ int	main()
 	printf("%s\n", strpbrk(str1, str2));
 	printf("%s\n", ft_strpbrk(str1, str2));
 	return (0);
-}
+}*/
