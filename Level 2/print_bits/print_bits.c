@@ -12,10 +12,10 @@ void print_bits(unsigned char octet)
 	}
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
 	print_bits(2);
 	return (0);
-}
+}*/
