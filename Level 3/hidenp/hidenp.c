@@ -6,7 +6,7 @@ int	main(int argc, char **argv)
 	int	j = 0;
 	if (argc == 3)
 	{
-		while (argv[1][i] && argv[2][j])
+		while (argv[2][j])
 		{
 			if (argv[1][i] == argv[2][j])
 				i++;
