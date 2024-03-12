@@ -6,7 +6,6 @@ int	ft_atoi(char *str)
 
 	while (*str)
 	{
-		//n = n * 10;
 		n = n * 10 + *str - '0';
 		str++;
 	}
@@ -25,9 +24,13 @@ void	print_hex(int n)
 int main(int argc, char **argv)
 {
 	int	i = 0;
+	int	num;
 
 	if (argc == 2)
-			print_hex(ft_atoi(argv[1]));
+	{
+        	num = ft_atoi(argv[1]);
+		print_hex(num);
+    	}
 	write(1, "\n", 1);
 	return (0);
 }
