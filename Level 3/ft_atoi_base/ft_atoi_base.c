@@ -28,7 +28,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	int	res = 0;
 	char base_lower[] = "0123456789abcdef";
 	char base_upper[] = "0123456789ABCDEF";
-    int digit;
+    	int digit;
 
 	while (str[i] <= 32)
 		i++;
