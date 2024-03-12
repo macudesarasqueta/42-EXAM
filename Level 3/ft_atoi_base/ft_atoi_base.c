@@ -1,10 +1,34 @@
+char	to_lower(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
+	return (c);
+}
+
+int get_digit(char c, int digits_in_base)
+{
+	int max_digit;
+	if (digits_in_base <= 10)
+		max_digit = digits_in_base + '0';
+	else
+		max_digit = digits_in_base - 10 + 'a';
+
+	if (c >= '0' && c <= '9' && c <= max_digit)
+		return (c - '0');
+	else if (c >= 'a' && c <= 'f' && c <= max_digit)
+		return (10 + c - 'a');
+	else
+		return (-1);
+}
+
 int	ft_atoi_base(const char *str, int str_base)
 {
 	int	i = 0;
 	int	flag = 1;
 	int	res = 0;
-	int	base_lower[] = "0123456789abcdef";
-	int base_upper[] = "0123456789ABCDEF"
+	char base_lower[] = "0123456789abcdef";
+	char base_upper[] = "0123456789ABCDEF";
+    int digit;
 
 	while (str[i] <= 32)
 		i++;
@@ -21,7 +45,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	return (res);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -29,12 +53,4 @@ int	main(void)
 	int	base = 16;
 	printf("%d\n", ft_atoi_base(str, base));
 	return (0);
-}
-
-/*int main() {
-        const char *str = "1ABcdf";    
-		int base = 16;    
-		int resultado = ft_atoi_base(str, base);
-    printf("El resultado de convertir '%s' a base %d es: %d\n", str, base, resultado);
-    return 0;
 }*/
