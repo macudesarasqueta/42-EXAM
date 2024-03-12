@@ -11,7 +11,7 @@ int	ft_list_size(t_list *begin_list)
 	return (len);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main()
@@ -43,4 +43,4 @@ int main()
     free(node3);
 
     return 0;
-}
+}*/
