@@ -18,7 +18,8 @@ void	print_hex(int n)
 
 	if (n >= 16)
 		print_hex(n / 16);
-	write(1, &hex_digits[n % 16], 1);
+	hex_digit = n % 16;
+	write(1, &hex_digits, 1);
 }
 
 int main(int argc, char **argv)
