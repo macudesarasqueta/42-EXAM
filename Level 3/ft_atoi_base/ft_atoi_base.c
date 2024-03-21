@@ -17,7 +17,7 @@ int get_digit(char c, int digits_in_base)
 char to_lower(char c)
 {
 	if (c >= 'A' && c <= 'Z')
-		c = c - 32;
+		c = c + 32;
 	return (c);
 }
 
@@ -54,8 +54,10 @@ int	ft_atoi_base(const char *str, int str_base)
 
 int	main(void)
 {
-	char str[] = "54abc";
+	char str[] = "54abc"; //346812
+	char str2[] = "58887FFA"; //1485340666
+	char str3[] = "eed84"; //978308
 	int	base = 16;
-	printf("%d\n", ft_atoi_base(str, base));
+	printf("%d\n", ft_atoi_base(str2, base));
 	return (0);
 }*/
