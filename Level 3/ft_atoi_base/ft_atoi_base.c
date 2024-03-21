@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 char	to_lower(char c)
 {
 	if (c >= 'A' && c <= 'Z')
@@ -5,6 +6,8 @@ char	to_lower(char c)
 	return (c);
 }
 
+=======
+>>>>>>> ae1946e053ec2294fa1a15e01722d1ca94e69c4c
 int get_digit(char c, int digits_in_base)
 {
 	int max_digit;
@@ -21,6 +24,7 @@ int get_digit(char c, int digits_in_base)
 		return (-1);
 }
 
+<<<<<<< HEAD
 int	ft_atoi_base(const char *str, int str_base)
 {
 	int	i = 0;
@@ -29,6 +33,24 @@ int	ft_atoi_base(const char *str, int str_base)
 	char base_lower[] = "0123456789abcdef";
 	char base_upper[] = "0123456789ABCDEF";
     int digit;
+=======
+char	to_lower(char c)
+{
+	if (c >= 'A' && c <= 'Z')
+		c = c - 32;
+	return (c);
+}
+
+int	ft_atoi_base(const char *str, int str_base)
+{
+	int i = 0;
+	int flag = 1;
+	char base_lower[] = "0123456789abcdef";
+	char base_upper[] = "0123456789ABCDEF";
+	char digit;
+	int value;
+	int res = 0;
+>>>>>>> ae1946e053ec2294fa1a15e01722d1ca94e69c4c
 
 	while (str[i] <= 32)
 		i++;
@@ -36,16 +58,20 @@ int	ft_atoi_base(const char *str, int str_base)
 		flag = -1;
 	while (str[i] == '-' || str[i] == '+')
 		i++;
-	while ((digit = get_digit(to_lower(str[i]), str_base)) >= 0)
+	while (str[i])
 	{
-		res = res * str_base;
-		res = res + (digit * flag);
+		digit = to_lower(str[i]);
+		value = get_digit(digit, str_base);
+		if (value >= 0)
+			res = res * str_base + (value * flag);
+		else
+			return (-1);
 		i++;
 	}
 	return (res);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int	main(void)
 {
@@ -53,4 +79,8 @@ int	main(void)
 	int	base = 16;
 	printf("%d\n", ft_atoi_base(str, base));
 	return (0);
+<<<<<<< HEAD
 }
+=======
+}*/
+>>>>>>> ae1946e053ec2294fa1a15e01722d1ca94e69c4c
