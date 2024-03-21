@@ -3,29 +3,29 @@
 char    *ft_strdup(char *src)
 {
 	char *mem;
-	int	i = 0;
-	int size = 0;
+	int len = 0;
+	int i = 0;
 
-	while (src[i])
-		i++;
-	mem = (char *)malloc(sizeof(char) * (i + 1));
+	while (src[len])
+		len++;
+	mem = (char *)malloc(sizeof(char) * (len + 1));
 	if (!mem)
 		return (NULL);
-	while (size < i)
+	while (i < len)
 	{
-		mem[size] = src[size];
-		size++;
+		mem[i] = src[i];
+		i++;
 	}
-	mem[size] = '\0';
+	mem[i] = '\0';
 	return (mem);
 }
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 
 int	main()
 {
-	printf("%s\n", strdup("hola"));
-	printf("%s\n", ft_strdup("hola"));
+	printf("%s\n", strdup("hola como estas"));
+	printf("%s\n", ft_strdup("hola como estas"));
 	return (0);
-}
+}*/
