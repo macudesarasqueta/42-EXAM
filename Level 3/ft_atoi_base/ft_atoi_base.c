@@ -1,7 +1,7 @@
 char	to_lower(char c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + ('a' - 'A'));
+		return (c - 32);
 	return (c);
 }
 
@@ -45,7 +45,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	return (res);
 }
 
-/*#include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -53,4 +53,4 @@ int	main(void)
 	int	base = 16;
 	printf("%d\n", ft_atoi_base(str, base));
 	return (0);
-}*/
+}
