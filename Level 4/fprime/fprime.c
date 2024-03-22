@@ -23,7 +23,7 @@ int	main(int argc, char *argv[])
 				printf("*");
 				i = 1;
 			}
-            i++;
+            		i++;
 		}
 	}
 	printf("\n");
