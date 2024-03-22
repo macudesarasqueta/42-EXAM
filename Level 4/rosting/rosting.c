@@ -18,16 +18,16 @@ int main(int argc, char **argv)
 		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i++;
 		while(argv[1][i])
-        {
-            while ((argv[1][i] == ' ' && argv[1][i + 1] == ' ') || (argv[1][i] == '\t' && argv[1][i + 1] == '\t'))
-                i++;
-            if (argv[1][i] == ' ' || argv[1][i] == '\t')
-                flag = 1;
-            write(1, &argv[1][i], 1);
-            i++;
-        }
-        if (flag)
-            write(1, " ", 1);
+        	{
+            		while ((argv[1][i] == ' ' && argv[1][i + 1] == ' ') || (argv[1][i] == '\t' && argv[1][i + 1] == '\t'))
+                		i++;
+            		if (argv[1][i] == ' ' || argv[1][i] == '\t')
+                		flag = 1;
+            		write(1, &argv[1][i], 1);
+            		i++;
+        	}
+        	if (flag)
+            		write(1, " ", 1);
 		while (start_word < end_word)
 		{
 			write(1, &argv[1][start_word], 1);
