@@ -1,5 +1,10 @@
 #include <stdlib.h>
-#include "sort_list.h"
+
+typedef struct t_list
+{
+	int data;
+	struct t_list *next;
+} t_list;
 
 t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
