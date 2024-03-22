@@ -17,10 +17,10 @@ int	main(int argc, char *argv[])
 			if (number % i == 0)
 			{
 				printf("%d", i);
+				number = number / i;
 				if (number == i)
 					break ;
 				printf("*");
-				number /= i;
 				i = 1;
 			}
             i++;
