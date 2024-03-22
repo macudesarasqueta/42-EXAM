@@ -13,7 +13,7 @@ void rev_wstr(char *str)
                 while (str[i] > 32 && str[i] < 127) 
                         i--; 
                 j = i + 1; 
-                while (str[j] > 32 && str[i] < 127) 
+                while (str[j] > 32 && str[j] < 127) 
                 { 
                         write(1, &str[j], 1); 
                         j++; 
