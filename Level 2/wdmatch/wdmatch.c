@@ -16,16 +16,13 @@ int	main(int argc, char const *argv[])
 	if (argc == 3)
 	{
 		while (argv[2][j])
-<<<<<<< HEAD
 		{
 			if (argv[2][j] == argv[1][i])
 				i++;
 			j++;
 		}
-=======
 			if (argv[2][j++] == argv[1][i])
 				i++;
->>>>>>> bb25119204a823e4dddb862360af489dcac777d7
 		if (!argv[1][i])
 			ft_putstr(argv[1]);
 	}
