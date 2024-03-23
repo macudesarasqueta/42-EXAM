@@ -20,8 +20,8 @@ unsigned int    lcm(unsigned int a, unsigned int b)
 
 int main()
 {
-	unsigned int a = 88;
-	unsigned int b = 8;
-	printf("%d\n", lcm(a, b));
+	unsigned int a = 7;
+	unsigned int b = 2;
+	printf("%d\n", lcm(a, b)); //resultado = 14
 	return (0);
 }*/
