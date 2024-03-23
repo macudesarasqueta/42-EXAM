@@ -24,7 +24,10 @@ size_t	ft_strcspn(const char *s, const char *reject)
 
 int	main()
 {
-	printf("%lu\n", strcspn("azlosz", "azl"));
-	printf("%zu\n", ft_strcspn("azlosz", "azl"));
+	//recorre toda la cadena s hasta que encuentra reject.
+	printf("%lu\n", strcspn("opppp558i", "azl")); // result = 9
+	printf("%zu\n", ft_strcspn("opppp558i", "azl")); // result = 9
+	printf("%lu\n", strcspn("opplp558i", "azl")); // result = 3
+	printf("%zu\n", ft_strcspn("opplp558i", "azl")); // result = 3
 	return (0);
 }
