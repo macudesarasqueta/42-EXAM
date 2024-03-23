@@ -31,6 +31,7 @@ size_t	ft_strspn(const char *s, const char *accept)
 
 int	main()
 {
+	//cuantas letras en s coinciden con charset
 	char s[] = "holhllaa";
 	char charset [] = "jjpllhhho";
 	printf("%lu\n", strspn(s, charset));
