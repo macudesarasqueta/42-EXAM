@@ -12,7 +12,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 	t_list	*tmp;
 
 	tmp = lst;
-	while(lst->next != NULL)
+	while(lst->next)
 	{
 		if (((*cmp)(lst->data, lst->next->data)) == 0)
 		{
@@ -33,6 +33,7 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 }
 
 #include <stdio.h>
+#include <stdlib.h>
 
 // Función para imprimir la lista
 void	print_list(t_list *lst)
