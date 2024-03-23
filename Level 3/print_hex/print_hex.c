@@ -3,15 +3,15 @@
 int	ft_atoi(char *str)
 {
 	int n = 0;
+	int i = 0;
 
-	while (*str)
+	while (str[i])
 	{
-		n = n * 10 + *str - '0';
-		str++;
+		n = n * 10 + str[i] - '0';
+		i++;
 	}
 	return (n);
 }
-
 void	print_hex(int n)
 {
 	char hex_digits[] = "0123456789abcdef";
