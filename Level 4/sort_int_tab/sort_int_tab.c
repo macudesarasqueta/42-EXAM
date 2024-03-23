@@ -22,7 +22,7 @@ void sort_int_tab(int *tab, unsigned int size)
 int main()
 {
 	int tab[] = {5, 7, 8, 3};
-	unsigned int size = sizeof(tab) / sizeof(tab[0]);
+	int size = 4;
 	sort_int_tab(tab, size);
 	unsigned int i = 0;
 	while (i < size)
