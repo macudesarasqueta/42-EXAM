@@ -5,7 +5,7 @@ void	ft_putnbr(int num)
 	char	digit;
 	if (num >= 10)
 		ft_putnbr(num / 10);
-	digit = (num % 10) + '0';
+	digit = num % 10 + '0';
 	write(1, &digit, 1);
 }
 
