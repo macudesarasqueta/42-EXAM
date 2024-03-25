@@ -28,13 +28,3 @@ char    **ft_split(char *str)
 	split[k] = NULL;
 	return (split);
 }
-
-/*#include <stdio.h>
-
-int main()
-{
-	int i = 0;
-	char str[] = "el sol brilla fuerte en las tardes de verano";
-	printf("%s\n", str);
-	return (0);
-}*/
