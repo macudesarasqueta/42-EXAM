@@ -29,7 +29,7 @@ char    **ft_split(char *str)
 	return (split);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main(void) 
@@ -63,3 +63,4 @@ int main(void)
 [4]: a
 [5]: test
 [6]: (null)
+*/
