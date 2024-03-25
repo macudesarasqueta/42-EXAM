@@ -1,12 +1,12 @@
 #include <unistd.h>
 
-int is_char_in_str(char c, char *str) 
+int is_char_in_str(char c, char *str2) 
 {
-	while (*str) 
+	while (*str2) 
 	{
-		if (*str == c)
+		if (*str2 == c)
             		return 1;
-        	str++;
+        	str2++;
     	}
 	return 0;
 }
