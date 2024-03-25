@@ -1,28 +1,34 @@
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+int is_char_in_str(char c, char *str) 
 {
-	int used[255] = {0};
+	while (*str) 
+	{
+		if (*str == c)
+            		return 1;
+        	str++;
+    	}
+	return 0;
+}
+
+int main(int argc, char **argv) 
+{
+	char *str1 = argv[1];
+    	char *str2 = argv[2];
+   	char char_found[256] = {0}; // Array para marcar caracteres encontrados
 
 	if (argc == 3)
 	{
-		int i = 0;
-		while (argv[1][i])
+    		while (*str1) 
 		{
-			int j = 0;
-			while (argv[2][j])
+        		if (is_char_in_str(*str1, str2) && !char_found[(unsigned char)*str1])
 			{
-				if (argv[1][i] == argv[2][j] && !used[(int)argv[1][i]])
-				{
-					write(1, &argv[1][i], 1);
-					used[(int)argv[1][i]] = 1;
-					break ;
-				}
-				j++;
-			}
-			i++;
-		}
+            			write(1, str1, 1);
+            			char_found[(unsigned char)*str1] = 1; // Marcar el carácter como encontrado
+        		}
+        		str1++;
+    		}
 	}
 	write(1, "\n", 1);
-	return (0);
+	return 0;
 }
