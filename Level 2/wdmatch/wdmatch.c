@@ -1,30 +1,27 @@
 #include <unistd.h>
 
-void ft_putstr(char const *str)
-{
-	int i = 0;
-
-	while (str[i])
-		write(1, &str[i++], 1);
-}
-
-int	main(int argc, char const *argv[])
+int main(int argc, char **argv)
 {
 	int i = 0;
 	int j = 0;
+	int k = 0;
 
 	if (argc == 3)
 	{
-		while (argv[2][j])
+		while (argv[2][i])
 		{
-			if (argv[2][j] == argv[1][i])
-				i++;
-			j++;
+			if (argv[2][i] == argv[1][j])
+				j++;
+			i++;
 		}
-			if (argv[2][j++] == argv[1][i])
-				i++;
-		if (!argv[1][i])
-			ft_putstr(argv[1]);
+		if (argv[1][j] == '\0')
+		{
+			while (argv[1][k])
+			{
+				write(1, &argv[1][k], 1);
+				k++;
+			}
+		}
 	}
 	write(1, "\n", 1);
 	return (0);
