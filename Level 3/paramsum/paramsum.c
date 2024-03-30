@@ -2,10 +2,9 @@
 
 void ft_putnbr(int n)
 {
-	char	digit;
 	if (n >= 10)
 		ft_putnbr(n / 10);
-	digit = (n % 10) + '0';
+	char digit = (n % 10) + '0';
 	write(1, &digit, 1);
 }
 
