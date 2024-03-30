@@ -2,65 +2,45 @@
 
 char    **ft_split(char *str)
 {
-	char **split;
+	char **mem;
 	int i = 0;
 	int j;
 	int k = 0;
 
-	split = (char **)malloc(sizeof(char) * 254);
-	if (!split)
+	mem = (char **)malloc(sizeof(char) * 300);
+	if (!mem)
 		return (NULL);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 		i++;
 	while (str[i])
 	{
 		j = 0;
-		split[k] = (char *)malloc(sizeof(char) * 4000);
-		if (!split[k])
+		mem[k] = (char *)malloc(sizeof(char) * 3000);
+		if (!mem[k])
 			return (NULL);
 		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
-			split[k][j++] = str[i++];
+			mem[k][j++] = str[i++];
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
 			i++;
-		split[k][j] = '\0';
+		mem[k][j] = '\0';
 		k++;
 	}
-	split[k] = NULL;
-	return (split);
+	mem[k] = NULL;
+	return (mem);
 }
 
-/*#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>
 
-int main(void) 
+int main()
 {
-	int i;
-	char str[] = "Hello world   this is a test";
-	char **result = ft_split(str);
+	int i = 0;
+	char str[] = "Hello world!";
+	char **res = ft_split(str);
 
-    	if (result == NULL) 
+	while (res[i])
 	{
-        	printf("Error: No se pudo asignar memoria.\n");
-        	return (1);
-    	}
-
-	i = 0;
-    	while (result[i++])
-        	printf("[%d]: %s\n", i, result[i]);
-
-    	// Liberar la memoria asignada
-	i = 0;   
-	while (result[i++])
-        	free(result[i]);
-    	free(result);
+		printf("%s\n", res[i]);
+		i++;
+	}
 	return (0);
 }
-
-//output
-[1]: world
-[2]: this
-[3]: is
-[4]: a
-[5]: test
-[6]: (null)
-*/
