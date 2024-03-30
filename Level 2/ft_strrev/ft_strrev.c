@@ -6,7 +6,6 @@ char *ft_strrev(char *str)
 
 	while (str[len])
 		len++;
-	len--;
 	while (i < len)
 	{
 		temp = str[i];
@@ -22,7 +21,7 @@ char *ft_strrev(char *str)
 
 int	main(void)
 {
-	char s[] = "Hello World";
+	char s[] = "Hello World"; // outout dlroW olleH
 	ft_strrev(s);
 	printf("%s\n", s);
 	return (0);
