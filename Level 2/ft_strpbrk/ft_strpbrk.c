@@ -1,31 +1,32 @@
 char	*ft_strpbrk(const char *s1, const char *s2)
 {
-	int	i = 0;
+	int i = 0;
+	int j = 0;
 
-	if (!s1 || !s2)
+	if (!s1[i] || !s2[j])
 		return (0);
-	while (*s1)
+	while (s1[i])
 	{
-		i = 0;
-		while (s2[i])
+		j = 0;
+		while (s2[j])
 		{
-			if (*s1 == s2[i])
+			if (s1[i] == s2[j])
 				return (char *) s1;
 			i++;
 		}
-		s1++;
+		j++;
 	}
 	return (0);
 }
 
-/*#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-int	main()
+int main()
 {
-	char str1[] = "iiiiiissssss";
-	char str2[] = "maaaaasssss";
-	printf("%s\n", strpbrk(str1, str2));
-	printf("%s\n", ft_strpbrk(str1, str2));
+	char str1[] = "hola gentezz";
+	char str2[] = "hola mi zgente";
+	printf("%s\n", strpbrk(str1, str2)); //output = hola gentezz
+	printf("%s\n", ft_strpbrk(str1, str2)); // output = hola gentezz
 	return (0);
-}*/
+}
