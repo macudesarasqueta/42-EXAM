@@ -29,7 +29,7 @@ char    **ft_split(char *str)
 	return (mem);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 int main()
 {
@@ -43,4 +43,4 @@ int main()
 		i++;
 	}
 	return (0);
-}
+}*/
