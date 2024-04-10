@@ -1,10 +1,4 @@
-#include <stdlib.h>
-
-typedef struct t_list
-{
-	int data;
-	struct t_list *next;
-} t_list;
+#include "list.h"
 
 t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
 {
