@@ -7,7 +7,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		if (argv[1][i] == ' ' || argv[1][i] == '\t')
+		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i++;
 		while (argv[1][i])
 		{
