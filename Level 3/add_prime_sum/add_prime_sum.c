@@ -1,18 +1,16 @@
 #include <unistd.h>
 
-void	put_num(int num)
+void	ft_putnbr(int num)
 {
-	char	digit;
-
 	if (num >= 10)
-		put_num(num / 10);
-	digit = num % 10 + '0';
-	write(1 , &digit, 1);
+		ft_putnbr(num / 10);
+	char digit = num % 10 + '0';
+	write(1, &digit, 1);
 }
 
 int	is_prime(int num)
 {
-	int	i = 2;
+	int i = 2;
 
 	if (num == 1)
 		return (0);
@@ -27,31 +25,32 @@ int	is_prime(int num)
 
 int	ft_atoi(char *str)
 {
-	int	i = 0;
-	int	res = 0;
+	int i = 0;
+	int num = 0;
+
 	while (str[i])
 	{
-		res = res * 10 + str[i] - '0';
+		num = num * 10 + str[i] - '0';
 		i++;
 	}
-	return (res);
+	return (num);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	int	i = 0;
 	int num;
-	int	sum = 0;
+	int sum;
+
 	if (argc == 2)
 	{
 		num = ft_atoi(argv[1]);
 		while (num > 0)
 		{
 			if (is_prime(num))
-				sum = num + sum;
+				sum = sum + num;
 			num--;
 		}
-		put_num(sum);
+		ft_putnbr(sum);
 	}
 	else
 		write(1, "0", 1);
