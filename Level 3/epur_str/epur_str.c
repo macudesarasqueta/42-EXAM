@@ -13,7 +13,7 @@ int	main(int argc, char **argv)
 		{
 			if (argv[1][i] == ' ' || argv[1][i] == '\t')
 				flag = 1;
-			if (!(argv[1][i] == ' ' || argv[1][i] == '\t'))
+			else if (argv[1][i] != ' ' && argv[1][i] != '\t'))
 			{
 				if (flag)
 				{
