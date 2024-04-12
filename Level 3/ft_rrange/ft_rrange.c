@@ -1,61 +1,53 @@
 #include <stdlib.h>
 
-int *ft_rrange(int start, int end)
+int	*ft_range(int start, int end)
 {
-	int *range;
-	int i = 0;
-	int step = 1;
-	int n = end - start;
-
-	if (n < 0)
-		n = -n;
-	n++;
-
-	range = (int *)malloc(sizeof(int) * n);
-	if (range)
+	int	i;
+	int	len;
+	int	*mem;
+	
+	i = 0;
+	len = end - start + 1;
+	if (start > end)
+		len = start - end + 1;
+	mem = malloc(sizeof(int) * len);
+	if (!mem)
+		return (NULL);
+	while (start >= end)
 	{
-		if (start < end)
-			step = -1;
-		while (i < n)
-		{
-			range[i] = end;
-			end = end + step;
-			i++;
-		}
+		mem[i] = start;
+		i++;
+		start--;
 	}
-	return (range);
+	while (end >= start)
+	{
+		mem[i] = start;
+		i++;
+		start++;
+	}
+	return (mem);
 }
 
-/*#include <stdio.h>
-
-int main() 
+int	main(void)
 {
-    int start = 1;
-    int end = 5;
+	int	*tab;
+	int	idx;
+	int	start;
+	int	end;
+	int	size;
 
-    // Llamada a la función ft_rrange
-    int *result = ft_rrange(start, end);
-
-    // Imprimir el resultado
-    if (result) 
-    {
-        // int i = 0;
-        // int n = end - start;
-
-        // if (n < 0)
-        //     n = -n;
-        // n++;
-        while (i < n) 
+	idx = 0;
+	start = 3;
+	end = 5;
+	if (start > end)
+		size = start - end + 1;
+	else
+		size = end - start + 1;
+	tab = ft_range(start, end);
+	while (idx < size)
 	{
-            printf("%d ", result[i]);
-            i++;
-        }
-        printf("\n");
-
-        // Liberar la memoria asignada
-        free(result);
-    } 
-    else
-        printf("Error: no se pudo asignar memoria.\n");
-    return (0);
-}*/
+		printf("%i", tab[idx]);
+		idx++;
+	}
+	printf("\n");
+}
