@@ -18,7 +18,7 @@ int	*ft_range(int start, int end)
 		i++;
 		start--;
 	}
-	while (end >= start)
+	while (start <= end)
 	{
 		mem[i] = start;
 		i++;
