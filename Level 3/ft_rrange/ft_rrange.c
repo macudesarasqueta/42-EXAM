@@ -2,11 +2,10 @@
 
 int	*ft_range(int start, int end)
 {
-	int	i;
+	int	i = 0;
 	int	len;
 	int	*mem;
 	
-	i = 0;
 	len = end - start + 1;
 	if (start > end)
 		len = start - end + 1;
