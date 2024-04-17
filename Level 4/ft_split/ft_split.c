@@ -1,16 +1,14 @@
-#include <stdlib.h>
-
-char    **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	char **mem;
 	int i = 0;
 	int j;
 	int k = 0;
+	char **mem;
 
-	mem = (char **)malloc(sizeof(char) * 300);
+	mem = (char **)malloc(sizeof(char) * count_words(str) + 1);
 	if (!mem)
 		return (NULL);
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+	while (is_space(str[i]))
 		i++;
 	while (str[i])
 	{
@@ -18,9 +16,9 @@ char    **ft_split(char *str)
 		mem[k] = (char *)malloc(sizeof(char) * 3000);
 		if (!mem[k])
 			return (NULL);
-		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+		while (!is_space(str[i]) && str[i])
 			mem[k][j++] = str[i++];
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		while (is_space(str[i]))
 			i++;
 		mem[k][j] = '\0';
 		k++;
