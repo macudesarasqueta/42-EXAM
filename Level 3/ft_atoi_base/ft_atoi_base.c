@@ -1,32 +1,33 @@
-int	get_digit(char c, int digit_base)
+int	char_is_in_base(char c, int str_base)
 {
-	int max_digit;
-	if (digit_base <= 10)
-		max_digit = digit_base + '0';
-	else
-		max_digit = digit_base - 10 + 'a';
-	if (c >= '0' && c <= '9')
-		return (c - '0');
-	else if (c >= 'a' && c <= 'f')
-		return (c - 'a' + 10);
-	else
-		return (-1);
+	static char *base = "0123456789abcdef";
+	static char *BASE = "0123456789ABCDEF";
+	int	i = 0;
+
+	while (base[i] && i < str_base)
+	{
+		if (c == base[i])
+			return (1);
+		if (c == BASE[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-char	to_lower(char c)
+int	atoi_get_value(char c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+	if (c >= '0' && c <= '9')
+		return (c - '0');
+	if (c >= 'a' && c <= 'f')
+		return (10 + c - 'a');
+	return (10 + c - 'A');
 }
 
 int	ft_atoi_base(const char *str, int str_base)
 {
-	//char base_lower[] = "0123456789abcdef";
-	//char base_upper[] = "0123456789ABCDEF";
 	int i = 0;
 	int flag = 1;
-	char digit;
 	int res = 0;
 
 	while (str[i] == ' ' || str[i] == '\t')
@@ -35,22 +36,20 @@ int	ft_atoi_base(const char *str, int str_base)
 		flag = -1;
 	while (str[i] == '-' || str[i] == '+')
 		i++;
-	while ((digit = get_digit(to_lower(str[i]), str_base)) >= 0)
+	while (char_is_in_base(str[i], str_base))
 	{
-		res = (res * str_base) + (digit * flag);
+		res = (res * str_base) + (atoi_get_value(str[i]));
 		i++;
 	}
-	return (res);
+	return (res * flag);
 }
 
 /*#include <stdio.h>
 
-int	main(void)
+int	main()
 {
-	char str[] = "-12FDB3"; //-1244595
-	char str2[] = "58887FFA"; //1485340666
-	char str3[] = "eed84"; //978308
-	char str4[] = "Ceci permet de decouvrir le fonctionnement de ton ft_atoi_base." "16"; //3308
-	printf("%d\n", ft_atoi_base(str2, base));
-	return (0);
+	const char	*str = "1A3df";
+	int	base = 16;
+	int	result = ft_atoi_base(str, base);
+	printf("Resultado: %d\n", result);
 }*/
