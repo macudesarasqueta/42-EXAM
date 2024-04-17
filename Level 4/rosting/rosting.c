@@ -1,6 +1,17 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+void	ft_putstr(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
 int	is_space(char c)
 {
 	if (c == ' ')
@@ -10,42 +21,28 @@ int	is_space(char c)
 	return (0);
 }
 
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-
 int	count_words(char *str)
 {
-	int	i;
-	int	count;
+	int i = 0;
+	int words = 0;
 
-	i = 0;
-	count = 0;
 	while (str[i])
 	{
 		if (i == 0 && !is_space(str[i]))
-			count++;
+			words++;
 		if (i > 0 && !is_space(str[i]) && is_space(str[i - 1]))
-			count++;
+			words++;
 		i++;
 	}
-	return (count);
+	return (words);
 }
 
-char    **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	char **mem;
 	int i = 0;
 	int j;
 	int k = 0;
+	char **mem;
 
 	mem = (char **)malloc(sizeof(char) * count_words(str) + 1);
 	if (!mem)
@@ -71,25 +68,24 @@ char    **ft_split(char *str)
 
 int main(int argc, char **argv)
 {
+	char **mem;
+	int num_words = 0;
+
 	if (argc >= 2)
 	{
-		char **matrix;
-		int i;
-		int num_words;
-
-		matrix = ft_split(argv[1]);
+		mem = ft_split(argv[1]);
 		num_words = count_words(argv[1]);
 		if (num_words > 1)
 		{
-			i = 1;
+			int i = 1;
 			while (i < num_words)
 			{
-				ft_putstr(matrix[i]);
+				ft_putstr(mem[i]);
 				write(1, " ", 1);
 				i++;
 			}
 		}
-		ft_putstr(matrix[0]);
+		ft_putstr(mem[0]);
 	}
 	write(1, "\n", 1);
 	return (0);
