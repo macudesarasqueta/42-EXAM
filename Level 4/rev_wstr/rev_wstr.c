@@ -73,18 +73,18 @@ int main(int argc, char **argv)
 {
 	if (argc >= 2)
 	{
-		char **matrix;
+		char **mem;
 		int num_words;
 
-		matrix = ft_split(argv[1]);
+		mem = ft_split(argv[1]);
 		num_words = count_words(argv[1]);
 		while (--num_words > 0)
 		{
-			ft_putstr(matrix[num_words]);
+			ft_putstr(mem[num_words]);
 			write(1, " ", 1);
 		}
         if (num_words == 0)
-		    ft_putstr(matrix[num_words]);
+		    ft_putstr(mem[num_words]);
 	}
 	write(1, "\n", 1);
 	return (0);
