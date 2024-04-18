@@ -38,7 +38,7 @@ int	ft_atoi_base(const char *str, int str_base)
 		i++;
 	while (char_is_in_base(str[i], str_base))
 	{
-		res = (res * str_base) + (atoi_get_value(str[i]));
+		res = res * str_base + atoi_get_value(str[i]);
 		i++;
 	}
 	return (res * flag);
