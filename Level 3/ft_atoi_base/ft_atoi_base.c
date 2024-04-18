@@ -30,7 +30,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	int flag = 1;
 	int res = 0;
 
-	while (str[i] == ' ' || str[i] == '\t')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 		flag = -1;
