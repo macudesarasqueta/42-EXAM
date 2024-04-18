@@ -23,14 +23,10 @@ void	print_hex(int n)
 
 int main(int argc, char **argv)
 {
-	int	i = 0;
-	int	num;
+	int i = 0;
 
 	if (argc == 2)
-	{
-        	num = ft_atoi(argv[1]);
-		print_hex(num);
-    	}
+		print_hex(ft_atoi(argv[1]));
 	write(1, "\n", 1);
 	return (0);
 }
