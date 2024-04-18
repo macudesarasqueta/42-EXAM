@@ -8,13 +8,13 @@ void	ft_putnbr(int num)
 	write(1, &digit, 1);
 }
 
-int	is_prime(int num)
+int	fprime(int num)
 {
 	int i = 2;
 
-	if (num == 1)
+	if (num <= 1)
 		return (0);
-	while (i * i <= num)
+	while (i < num)
 	{
 		if (num % i == 0)
 			return (0);
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 		num = ft_atoi(argv[1]);
 		while (num > 0)
 		{
-			if (is_prime(num))
+			if (fprime(num))
 				sum = sum + num;
 			num--;
 		}
