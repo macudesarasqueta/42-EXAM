@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int	i;
-	int	number;
+	int i;
+	int number;
 
 	if (argc == 2)
 	{
@@ -17,13 +17,12 @@ int	main(int argc, char *argv[])
 			if (number % i == 0)
 			{
 				printf("%d", i);
+				if (number != i)
+					printf("*");
 				number = number / i;
-				if (number == i)
-					break ;
-				printf("*");
 				i = 1;
 			}
-            		i++;
+          		i++;
 		}
 	}
 	printf("\n");
