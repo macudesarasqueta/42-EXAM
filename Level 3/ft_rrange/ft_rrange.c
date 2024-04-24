@@ -1,33 +1,35 @@
 #include <stdlib.h>
 
-int	*ft_range(int start, int end)
+int	*ft_rrange(int start, int end)
 {
 	int	i = 0;
 	int	len;
 	int	*mem;
-	
+
 	len = end - start + 1;
 	if (start > end)
 		len = start - end + 1;
 	mem = malloc(sizeof(int) * len);
 	if (!mem)
 		return (NULL);
-	while (start >= end)
+	while (end >= start)
 	{
-		mem[i] = start;
+		mem[i] = end;
 		i++;
-		start--;
+		end--;
 	}
-	while (start <= end)
+	while (end <= start)
 	{
-		mem[i] = start;
+		mem[i] = end;
 		i++;
-		start++;
+		end++;
 	}
 	return (mem);
 }
 
-int	main(void)
+/*#include <stdio.h>
+
+int	main()
 {
 	int	*tab;
 	int	idx;
@@ -36,17 +38,17 @@ int	main(void)
 	int	size;
 
 	idx = 0;
-	start = 3;
-	end = 5;
+	start = 1;
+	end = 3;
 	if (start > end)
 		size = start - end + 1;
 	else
 		size = end - start + 1;
-	tab = ft_range(start, end);
+	tab = ft_rrange(start, end);
 	while (idx < size)
 	{
-		printf("%i", tab[idx]);
+		printf("%i ", tab[idx]);
 		idx++;
 	}
 	printf("\n");
-}
+}*/
