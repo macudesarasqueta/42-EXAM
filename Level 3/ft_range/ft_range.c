@@ -27,18 +27,24 @@ int	*ft_range(int start, int end)
 }
 /*#include <stdio.h>
 
-void	print_array(int *array, int size)
+int	main()
 {
-	for (int i = 0; i < size; i++)
-		printf("%d ", array[i]);
-	printf("\n");
-}
+	int	*tab;
+	int	i = 0;
+	int	start;
+	int	end;
+	int	len;
 
-int	main(void)
-{
-	int start = 0;
-	int end = 3;
-    	print_array(ft_range(start, end), 4);
-	free(ft_range(start, end));
-	return (0);
+	start = 1;
+	end = 3;
+ 	len = end - start + 1;
+	if (start > end)
+		len = start - end + 1;
+	tab = ft_rrange(start, end);
+	while (i < len)
+	{
+		printf("%i ", tab[i]);
+		i++;
+	}
+	printf("\n");
 }*/
