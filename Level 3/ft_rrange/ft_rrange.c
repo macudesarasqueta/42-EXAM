@@ -32,23 +32,21 @@ int	*ft_rrange(int start, int end)
 int	main()
 {
 	int	*tab;
-	int	idx;
+	int	i = 0;
 	int	start;
 	int	end;
-	int	size;
+	int	len;
 
-	idx = 0;
 	start = 1;
 	end = 3;
+ 	len = end - start + 1;
 	if (start > end)
-		size = start - end + 1;
-	else
-		size = end - start + 1;
+		len = start - end + 1;
 	tab = ft_rrange(start, end);
-	while (idx < size)
+	while (i < len)
 	{
-		printf("%i ", tab[idx]);
-		idx++;
+		printf("%i ", tab[i]);
+		i++;
 	}
 	printf("\n");
 }*/
