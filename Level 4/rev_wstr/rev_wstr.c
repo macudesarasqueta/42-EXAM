@@ -83,8 +83,8 @@ int main(int argc, char **argv)
 			ft_putstr(mem[num_words]);
 			write(1, " ", 1);
 		}
-        if (num_words == 0)
-		    ft_putstr(mem[num_words]);
+        	if (num_words == 0)
+			ft_putstr(mem[num_words]);
 	}
 	write(1, "\n", 1);
 	return (0);
