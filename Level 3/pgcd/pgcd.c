@@ -3,12 +3,11 @@
 
 int	main(int argc, char **argv)
 {
-	int	nbr1;
-	int	nbr2;
-
 	if (argc == 3)
 	{
-		if (argv[1][0] && argv[2][0] && (nbr1 = atoi(argv[1])) > 0 && (nbr2 = atoi(argv[2])) > 0)
+		int	nbr1 = atoi(argv[1]);
+		int	nbr2 = atoi(argv[2]);
+		if (argv[1][0] && argv[2][0] && nbr1 > 0 && nbr2 > 0)
 		{
 			while (nbr1 != nbr2)
 			{
