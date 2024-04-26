@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 		while (mult <= 9)
 		{
 			ft_putnbr(mult);
-			write(1, " X ", 3);
+			write(1, " x ", 3);
 			ft_putnbr(num);
 			write(1, " = ", 3);
 			ft_putnbr(mult * num);
