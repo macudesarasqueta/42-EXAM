@@ -34,7 +34,7 @@ int	main()
 	//cuantas letras en s coinciden con accept
 	char s[] = "holhllaa";
 	char charset [] = "jjpllhhho";
-	printf("%lu\n", strspn(s, charset));
-	printf("%zu\n", ft_strspn(s, charset));
+	printf("%lu\n", strspn(s, charset)); //6
+	printf("%zu\n", ft_strspn(s, charset)); //6
 	return (0);
 }*/
