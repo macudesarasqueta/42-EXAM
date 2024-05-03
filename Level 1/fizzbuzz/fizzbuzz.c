@@ -23,8 +23,8 @@ int main()
 			write(1, "buzz", 4);
 		else
 			ft_putnbr(num);
-		num++;
 		write(1, "\n", 1);
+		num++;
 	}
 	return (0);
 }
